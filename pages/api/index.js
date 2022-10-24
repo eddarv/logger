@@ -12,9 +12,9 @@ export default async function handler(req, res) {
     });
 
     if(!req.body.hasOwnProperty('projectId')) res.status(200).json(name)
-      {
-        if(req.body.projectId !== "prj_Uneqt4CLqAh6YprTsAUfBqhfuHLs") return
-      }
+    
+    if(req.body.projectId !== "prj_Uneqt4CLqAh6YprTsAUfBqhfuHLs") return
+    
 
     name=[...name, req.body]
     
