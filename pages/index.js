@@ -9,8 +9,8 @@ export default function Home({name}) {
 
   let customFetch = async () =>{
     let res= await fetch("https://logger-git-main-eddarv.vercel.app/api")
-    // let data= await JSON.parse(res)
-    setData(res)
+    let data= res.body
+    setData(data)
   }
 
   useEffect(()=>{
