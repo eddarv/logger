@@ -28,9 +28,12 @@ export default function Home({name}) {
 
 export async function getServerSideProps({ req, res }) {
 
+  let name = []
+  name=[...name,`${Math.random()*10}`]
+
   return {
     props: {
-      name: "smeijer"
+      name
     }
   };
 }
