@@ -12,7 +12,7 @@ export default async function handler(req, res) {
     });
 
 
-    if(req.body[0]===null) return res.status(200).json(name)
+    if(req.body[0]==null) return res.status(200).json(name)
 
     else{
       name=[...name, req.body[0]]
