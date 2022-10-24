@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react'
 import styles from '../styles/Home.module.css'
 
 export default function Home({name}) {
-  console.log(name)
-  // let [arr,setArr]=useState([])
+
+  let [data,setData]=useState(null)
 
   // customFetch = async () =>{
   //   let res= await fetch("https://logger-git-main-eddarv.vercel.app/api")
@@ -18,10 +18,10 @@ export default function Home({name}) {
 
   // },[])
 
-  // useEffect(()=>{
-  //   console.log(arr)
+  useEffect(()=>{
+    console.log(data)
 
-  // },[arr])
+  },[data])
 
 
   return (
