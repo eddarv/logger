@@ -7,16 +7,16 @@ export default function Home({name}) {
 
   let [data,setData]=useState(null)
 
-  // customFetch = async () =>{
-  //   let res= await fetch("https://logger-git-main-eddarv.vercel.app/api")
-  //   // let data= await JSON.parse(res)
-  //   setArr(res)
-  // }
+  let customFetch = async () =>{
+    let res= await fetch("https://logger-git-main-eddarv.vercel.app/api")
+    let data= await JSON.parse(res)
+    setArr(res)
+  }
 
-  // useEffect(()=>{
-  //   customFetch()
+  useEffect(()=>{
+    customFetch()
 
-  // },[])
+  },[])
 
   useEffect(()=>{
     console.log(data)
