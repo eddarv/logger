@@ -9,13 +9,12 @@ export default function Home({name}) {
 
   let customFetch = async () =>{
     let res= await fetch("https://logger-git-main-eddarv.vercel.app/api")
-    let data= await JSON.stringify(res.body)
+    let data= await res.json()
     setData(data)
   }
 
   useEffect(()=>{
     customFetch()
-
   },[])
 
   useEffect(()=>{
