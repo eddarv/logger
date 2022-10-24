@@ -12,9 +12,8 @@ export default async function handler(req, res) {
     });
 
 
-    // if(req.json().body[0].projectId) res.status(200).json(name)
+    if(!req.body[0].hasOwnProperty('projectId')) res.status(200).json(name)
 
-    console.log("hola")
     
     name=[...name, req.body]
     
