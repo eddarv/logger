@@ -1,9 +1,29 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 import styles from '../styles/Home.module.css'
 
 export default function Home({name}) {
   console.log(name)
+  let [arr,setArr]=useState([])
+
+  customFetch = async () =>{
+    let res= await fetch("https://logger-git-main-eddarv.vercel.app/api")
+    let data= await JSON.parse(res)
+    setArr(data)
+  }
+
+  useEffect(()=>{
+    customFetch()
+
+  },[])
+
+  useEffect(()=>{
+    console.log(arr)
+
+  },[arr])
+
+
   return (
     <div className={styles.container}>
       <Head>
