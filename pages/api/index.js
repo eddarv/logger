@@ -11,7 +11,7 @@ export default async function handler(req, res) {
        optionsSuccessStatus: 200, 
     });
 
-    name=[...name,req.body]
+    name=[...name,req]
     
     res.status(200).json(name)
 }
