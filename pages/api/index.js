@@ -11,7 +11,7 @@ export default async function handler(req, res) {
        optionsSuccessStatus: 200, 
     });
 
-    // if(!JSON.parse(req.body[0]).hasOwnProperty('projectId')) res.status(200).json(name)
+    if(!req.body[0].projectId) res.status(200).json(name)
     
     name=[...name, req.body]
     
