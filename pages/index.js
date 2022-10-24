@@ -5,23 +5,23 @@ import styles from '../styles/Home.module.css'
 
 export default function Home({name}) {
   console.log(name)
-  let [arr,setArr]=useState([])
+  // let [arr,setArr]=useState([])
 
-  customFetch = async () =>{
-    let res= await fetch("https://logger-git-main-eddarv.vercel.app/api")
-    // let data= await JSON.parse(res)
-    setArr(res)
-  }
+  // customFetch = async () =>{
+  //   let res= await fetch("https://logger-git-main-eddarv.vercel.app/api")
+  //   // let data= await JSON.parse(res)
+  //   setArr(res)
+  // }
 
-  useEffect(()=>{
-    customFetch()
+  // useEffect(()=>{
+  //   customFetch()
 
-  },[])
+  // },[])
 
-  useEffect(()=>{
-    console.log(arr)
+  // useEffect(()=>{
+  //   console.log(arr)
 
-  },[arr])
+  // },[arr])
 
 
   return (
