@@ -1,5 +1,6 @@
 import NextCors from 'nextjs-cors'
 import {PrismaClient} from '@prisma/client'
+import { get } from 'http'
 const prisma = new PrismaClient()
 
 let name=[]
@@ -36,15 +37,16 @@ export default async function handler(req, res) {
      
      
         if(req.method==='GET') {
+            console.log("get")
             name = await read()
                 .catch(e=> {
-                    console.log(e.message)
+                    return res.status(500).json(e)
                 })
                 .finally(async ()=>{
                     await prisma.$disconnect()
                 })
 
-            if(name.length===0) return res.status(200).json([{key:"value"}])
+            if(name.length===0) return res.status(200).json([1])
             return res.status(200).json(name)
         }
 
