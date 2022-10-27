@@ -38,16 +38,16 @@ export default async function handler(req, res) {
         if(req.method==='GET') {
             name = await read()
                 .catch(e=> {
-                    return res.status(500).json({res:"error en respuestas"})
+                    return res.status(500).send({res:"error en respuestas"})
                 })
                 .finally(async ()=>{
                     await prisma.$disconnect()
                 })
             
-            if(!name.ok) return res.status(500).json({res:"res not ok"})
+            if(!name.ok) return res.status(500).send({res:"res not ok"})
 
             if(name.length===0) return res.status(200).json([1])
-            return res.status(200).json({res:"res ok"})
+            return res.status(200).send({res:"res ok"})
         }
 
         if(req.method==='POST') {
