@@ -13,7 +13,7 @@ export default function Home() {
   let customFetch = async () =>{
     try{
       let res= await fetch("https://logger-git-main-eddarv.vercel.app/api")
-      console.log(JSON.stringify(res) + " --- " + res.ok)
+      // console.log(JSON.stringify(res) + " --- " + res.ok)
       let data= await res.json()
 
       setData([...data])
