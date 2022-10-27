@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
-import DynamicTr from '../components.js/dynamicTr'
+import DynamicTr from '../components.js/DynamicTr'
 import Spinner from '../components.js/Spinner'
 import styles from '../styles/Home.module.css'
 
