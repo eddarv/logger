@@ -44,7 +44,7 @@ export default async function handler(req, res) {
                     await prisma.$disconnect()
                 })
 
-            if(name.length===0) return res.status(200).json([1])
+            if(name.length===0) return res.status(200).json([{key:"value"}])
             return res.status(200).json(name)
         }
 
