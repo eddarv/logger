@@ -20,5 +20,4 @@ model Log {
   source       String
   host         String
   entrypoint   String
-  projectId    String
 }
