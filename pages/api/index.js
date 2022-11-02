@@ -40,7 +40,7 @@ export default async function handler(req, res) {
 
                 name = await read()
                     .catch(e=> {
-                        return res.status(500).send(e)
+                        return res.status(500).text(e)
                     })
                     .finally(async ()=>{
                         await prisma.$disconnect()
