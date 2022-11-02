@@ -41,10 +41,8 @@ export default async function handler(req, res) {
           await prisma.$disconnect();
         });
 
-      console.log({ name });
-
       if (name.length === 0) return res.status(200).json([1]);
-      return res.status(200).send("res ok");
+      return res.status(200).json(name);
     }
 
     if (req.method === "POST") {
