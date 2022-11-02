@@ -36,16 +36,24 @@ export default async function handler(req, res) {
      
      
         if(req.method==='GET') {
-            name = await read()
-                .catch(e=> {
-                    return res.status(500).json(e)
-                })
-                .finally(async ()=>{
-                    await prisma.$disconnect()
-                })
+            try{
 
-            if(name.length===0) return res.status(200).json([1])
-            return res.status(200).json(name)
+                name = await read()
+                    .catch(e=> {
+                        return res.status(500).json({error:"error2"})
+                    })
+                    .finally(async ()=>{
+                        await prisma.$disconnect()
+                    })
+
+                if(name.length===0) return res.status(200).json([1])
+                return res.status(200).json(name)
+
+            }
+            catch(e){
+                return res.status(200).json({error:"error"})
+            }
+            
         }
 
         if(req.method==='POST') {
